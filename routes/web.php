@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AllController;
 use App\Http\Controllers\FactController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +34,7 @@ Route::get('/admin/index', function(){
 })->name('admin');
 
 
-//ABOUT
+// A B O U T
 
 //read
 Route::get('admin/presentation', [AboutController::class, 'index'])->name('abouts.index');
@@ -55,7 +56,7 @@ Route::get('/admin/presentation/{id}/edit', [AboutController::class, 'edit'])->n
 Route::put('/admin/presentation/{id}/update', [AboutController::class, 'update'])->name('abouts.update');
 // --------------------------------------------------------------------------
 
-//FACT
+// F A C T
 
 //Create
 Route::get('/admin/number/create', [FactController::class, 'create'])->name('facts.create');
@@ -72,7 +73,7 @@ Route::put('/admin/number/{id}/update', [FactController::class, 'update'])->name
 
 // ------------------------------------------------------------------------------------
 
-// SKILLS
+// S K I L L S
 
 //Create
 Route::get('/admin/competence/create', [SkillController::class, 'create'])->name('skills.create');
@@ -86,3 +87,39 @@ Route::get('/admin/competence/{id}', [SkillController::class, 'show'])->name('sk
 //Edit || Update
 Route::get('/admin/competence/{id}/edit', [SkillController::class, 'edit'])->name('skills.edit');
 Route::put('/admin/competence/{id}/update', [SkillController::class, 'update'])->name('skills.update');
+
+
+// -----------------------------------------------------------------------------------------------
+
+// P O R T F O L I O
+
+//Create
+Route::get('/admin/cards/create', [PortfolioController::class, 'create'])->name('portfolios.create');
+
+//Delete
+Route::delete('/admin/cards/{id}/delete', [PortfolioController::class, 'destroy'])->name('portfolios.destroy');
+
+//Show
+Route::get('/admin/cards/{id}', [PortfolioController::class, 'show'])->name('portfolios.show');
+
+//Edit || Update
+Route::get('/admin/cards/{id}/edit', [PortfolioController::class, 'edit'])->name('portfolios.edit');
+Route::put('/admin/cards/{id}/update', [PortfolioController::class, 'update'])->name('portfolios.update');
+
+
+// ---------------------------------------------------------------------------------------------------
+
+// S E R V I C E 
+
+//Create
+Route::get('/admin/number/create', [FactController::class, 'create'])->name('facts.create');
+
+//Delete
+Route::delete('/admin/number/{id}/delete', [FactController::class, 'destroy'])->name('facts.destroy');
+
+//Show
+Route::get('/admin/number/{id}', [FactController::class, 'show'])->name('facts.show');
+
+//Edit || Update
+Route::get('/admin/number/{id}/edit', [FactController::class, 'edit'])->name('facts.edit');
+Route::put('/admin/number/{id}/update', [FactController::class, 'update'])->name('facts.update');
