@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AllController;
 use App\Http\Controllers\FactController;
+use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +54,7 @@ Route::get('/admin/presentation/{id}', [AboutController::class, 'show'])->name('
 Route::get('/admin/presentation/{id}/edit', [AboutController::class, 'edit'])->name('abouts.edit');
 Route::put('/admin/presentation/{id}/update', [AboutController::class, 'update'])->name('abouts.update');
 // --------------------------------------------------------------------------
+
 //FACT
 
 //Create
@@ -67,3 +69,20 @@ Route::get('/admin/number/{id}', [FactController::class, 'show'])->name('facts.s
 //Edit || Update
 Route::get('/admin/number/{id}/edit', [FactController::class, 'edit'])->name('facts.edit');
 Route::put('/admin/number/{id}/update', [FactController::class, 'update'])->name('facts.update');
+
+// ------------------------------------------------------------------------------------
+
+// SKILLS
+
+//Create
+Route::get('/admin/competence/create', [SkillController::class, 'create'])->name('skills.create');
+
+//Delete
+Route::delete('/admin/competence/{id}/delete', [SkillController::class, 'destroy'])->name('skills.destroy');
+
+//Show
+Route::get('/admin/competence/{id}', [SkillController::class, 'show'])->name('skills.show');
+
+//Edit || Update
+Route::get('/admin/competence/{id}/edit', [SkillController::class, 'edit'])->name('skills.edit');
+Route::put('/admin/competence/{id}/update', [SkillController::class, 'update'])->name('skills.update');
