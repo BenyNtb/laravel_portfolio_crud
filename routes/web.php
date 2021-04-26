@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AllController;
+use App\Http\Controllers\FactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,3 +52,18 @@ Route::get('/admin/presentation/{id}', [AboutController::class, 'show'])->name('
 //Edit || Update
 Route::get('/admin/presentation/{id}/edit', [AboutController::class, 'edit'])->name('abouts.edit');
 Route::put('/admin/presentation/{id}/update', [AboutController::class, 'update'])->name('abouts.update');
+// --------------------------------------------------------------------------
+//FACT
+
+//Create
+Route::get('/admin/number/create', [FactController::class, 'create'])->name('facts.create');
+
+//Delete
+Route::delete('/admin/number/{id}/delete', [FactController::class, 'destroy'])->name('facts.destroy');
+
+//Show
+Route::get('/admin/number/{id}', [FactController::class, 'show'])->name('facts.show');
+
+//Edit || Update
+Route::get('/admin/number/{id}/edit', [FactController::class, 'edit'])->name('facts.edit');
+Route::put('/admin/number/{id}/update', [FactController::class, 'update'])->name('facts.update');
