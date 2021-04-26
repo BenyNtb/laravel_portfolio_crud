@@ -21,6 +21,7 @@
                 <li><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
                 <li><a href="#services"><i class="bx bx-server"></i> Services</a></li>
                 <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
+                <li><a href="{{route('admin')}}"><i class="bx bx-lock"></i> Admin</a></li>
 
             </ul>
         </nav><!-- .nav-menu -->

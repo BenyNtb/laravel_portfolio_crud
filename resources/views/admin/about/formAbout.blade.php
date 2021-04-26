@@ -64,7 +64,7 @@
                 <hr>
 
                 <label for="degree">Degree</label>
-                <input type="text" name="Degree">
+                <input type="text" name="degree">
 
                 <hr>
 
@@ -84,3 +84,4 @@
         </div>
     </section>
 @endsection
+
