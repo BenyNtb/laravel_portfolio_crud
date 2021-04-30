@@ -26,11 +26,11 @@ class FactController extends Controller
         $fact->count = $request-> count;
         $fact->icon = $request-> icon;
         $fact->save();
-        return redirect()->route('facts.index');
+        return redirect()->route('facts.index')->with('success', 'Your element has added successfully');
     }
     public function destroy(Fact $id){
         $id->delete();
-        return redirect()->route('facts.index');
+        return redirect()->route('facts.index')->with('warning', "An element has been deleted");
     }
     public function show(Fact $id){
         $fact = $id;
@@ -52,6 +52,6 @@ class FactController extends Controller
         $fact->count = $request-> count;
         $fact->icon = $request-> icon;
         $fact->save();
-        return redirect('/admin/numbers/' . $fact->id);
+        return redirect()->route('facts.index')->with('success', 'Your facts is up to date');
     }
 }

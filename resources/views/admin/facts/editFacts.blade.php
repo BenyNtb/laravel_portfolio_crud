@@ -10,17 +10,17 @@
                     @csrf
                     @method('PUT')
                     <label for="description">Description</label>
-                    <input type="text" name="description" id="description" value="{{old('description')}}">
+                    <input type="text" name="description" id="description" value="{{$fact->description}}">
 
                     <hr>
 
                     <label for="count">Count</label>
-                    <input type="text" name="count" id="count" value="{{old('count')}}">
+                    <input type="text" name="count" id="count" value="{{$fact->count}}">
 
                     <hr>
 
                     <label for="icon">Icon</label>
-                    <input type="text" name="Icon" id="icon" value="{{old('icon')}}">
+                    <input type="text" name="icon" id="icon" value="{{$fact->icon}}">
 
                     <hr>
 

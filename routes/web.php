@@ -65,7 +65,7 @@ Route::get('admin/facts', [FactController::class, 'index'])->name('facts.index')
 
 //Create
 Route::get('/admin/facts/create', [FactController::class, 'create'])->name('facts.create');
-Route::post('/admin/facts/store', [SkillController::class, 'store'])->name('facts.store');
+Route::post('/admin/facts/store', [FactController::class, 'store'])->name('facts.store');
 
 //Delete
 Route::delete('/admin/facts/{id}/delete', [FactController::class, 'destroy'])->name('facts.destroy');
