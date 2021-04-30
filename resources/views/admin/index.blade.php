@@ -13,19 +13,25 @@
         <div>
             <div>
                 <h3>Modify Facts</h3>
-                <a href="">Presentation</a>
+                <a href={{route('facts.index')}}>Presentation</a>
             </div>
         </div>
         <div>
             <div>
                 <h3>Modify Portfolio</h3>
-                <a href="">Presentation</a>
+                <a href={{route('portfolios.index')}}>Presentation</a>
             </div>
         </div>
         <div>
             <div>
                 <h3>Modify Services</h3>
-                <a href="">Presentation</a>
+                <a href={{route('services.index')}}>Presentation</a>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h3>Modify Skills</h3>
+                <a href={{route('skills.index')}}>Presentation</a>
             </div>
         </div>
     </section>

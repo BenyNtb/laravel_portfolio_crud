@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <h1>Facts</h1>
-        <form method="POST" action="">
+        <form method="POST" action="{{route('skills.store')}}">
             @csrf
             <label for="clients">Happy Clients</label>
-            <input type="text" name="clients">
+            <input type="text" name="clients" id="clients" id="clients" value="{{old('clients')}}">
 
             <hr>
 

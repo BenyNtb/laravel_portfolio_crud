@@ -18,6 +18,21 @@ class AboutController extends Controller
     }
     public function store(Request $request)
     {
+        request()->validate([
+            "title" =>["required"],
+            "description" =>["required"],
+            "image" =>["required"],
+            "subtitle" =>["required"],
+            "subparagraph" =>["required"],
+            "birthday" =>["required"],
+            "website" =>["required"],
+            "phone" =>["required"],
+            "city" =>["required"],
+            "age" =>["required"],
+            "degree" =>["required"],
+            "email" =>["required"],
+            "freelance" =>["required"],
+        ]);
         $presentation = new About();
         $presentation->title = $request->title;
         $presentation->description = $request->description;
@@ -54,6 +69,21 @@ class AboutController extends Controller
     }
     public function update(About $id, Request $request)
     {
+        request()->validate([
+            "title" =>["required"],
+            "description" =>["required"],
+            "image" =>["required"],
+            "subtitle" =>["required"],
+            "subparagraph" =>["required"],
+            "birthday" =>["required"],
+            "website" =>["required"],
+            "phone" =>["required"],
+            "city" =>["required"],
+            "age" =>["required"],
+            "degree" =>["required"],
+            "email" =>["required"],
+            "freelance" =>["required"],
+        ]);
         $presentation = $id;
         $presentation->title = $request->title;
         $presentation->description = $request->description;
@@ -69,6 +99,6 @@ class AboutController extends Controller
         $presentation->email = $request->email;
         $presentation->freelance = $request->freelance;
         $presentation->save();
-        return redirect('/admin/presentation/' . $presentation->id);
+        return redirect()->route('abouts.index');
     }
 }

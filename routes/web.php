@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AllController;
 use App\Http\Controllers\FactController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,7 @@ Route::get('admin/presentation', [AboutController::class, 'index'])->name('about
 
 //Create
 Route::get('/admin/presentation/create', [AboutController::class, 'create'])->name('abouts.create');
+Route::post('/admin/presentation/store', [SkillController::class, 'store'])->name('about.store');
 
 //Store
 Route::post('/admin/presentation/store', [AboutController::class, 'store'])->name('abouts.store');
@@ -58,43 +60,55 @@ Route::put('/admin/presentation/{id}/update', [AboutController::class, 'update']
 
 // F A C T
 
+//read
+Route::get('admin/facts', [FactController::class, 'index'])->name('facts.index');
+
 //Create
-Route::get('/admin/number/create', [FactController::class, 'create'])->name('facts.create');
+Route::get('/admin/facts/create', [FactController::class, 'create'])->name('facts.create');
+Route::post('/admin/facts/store', [SkillController::class, 'store'])->name('facts.store');
 
 //Delete
-Route::delete('/admin/number/{id}/delete', [FactController::class, 'destroy'])->name('facts.destroy');
+Route::delete('/admin/facts/{id}/delete', [FactController::class, 'destroy'])->name('facts.destroy');
 
 //Show
-Route::get('/admin/number/{id}', [FactController::class, 'show'])->name('facts.show');
+Route::get('/admin/facts/{id}', [FactController::class, 'show'])->name('facts.show');
 
 //Edit || Update
-Route::get('/admin/number/{id}/edit', [FactController::class, 'edit'])->name('facts.edit');
-Route::put('/admin/number/{id}/update', [FactController::class, 'update'])->name('facts.update');
+Route::get('/admin/facts/{id}/edit', [FactController::class, 'edit'])->name('facts.edit');
+Route::put('/admin/facts/{id}/update', [FactController::class, 'update'])->name('facts.update');
 
 // ------------------------------------------------------------------------------------
 
 // S K I L L S
 
+//read
+Route::get('admin/skills', [SkillController::class, 'index'])->name('skills.index');
+
 //Create
 Route::get('/admin/competence/create', [SkillController::class, 'create'])->name('skills.create');
+Route::post('/admin/competence/store', [SkillController::class, 'store'])->name('skills.store');
 
 //Delete
-Route::delete('/admin/competence/{id}/delete', [SkillController::class, 'destroy'])->name('skills.destroy');
+Route::delete('/admin/skills/{id}/delete', [SkillController::class, 'destroy'])->name('skills.destroy');
 
 //Show
-Route::get('/admin/competence/{id}', [SkillController::class, 'show'])->name('skills.show');
+Route::get('/admin/skills/{id}', [SkillController::class, 'show'])->name('skills.show');
 
 //Edit || Update
-Route::get('/admin/competence/{id}/edit', [SkillController::class, 'edit'])->name('skills.edit');
-Route::put('/admin/competence/{id}/update', [SkillController::class, 'update'])->name('skills.update');
+Route::get('/admin/skills/{id}/edit', [SkillController::class, 'edit'])->name('skills.edit');
+Route::put('/admin/skills/{id}/update', [SkillController::class, 'update'])->name('skills.update');
 
 
 // -----------------------------------------------------------------------------------------------
 
 // P O R T F O L I O
 
+//read
+Route::get('admin/cards', [PortfolioController::class, 'index'])->name('portfolios.index');
+
 //Create
 Route::get('/admin/cards/create', [PortfolioController::class, 'create'])->name('portfolios.create');
+Route::post('/admin/cards/store', [SkillController::class, 'store'])->name('portfolios.store');
 
 //Delete
 Route::delete('/admin/cards/{id}/delete', [PortfolioController::class, 'destroy'])->name('portfolios.destroy');
@@ -111,15 +125,19 @@ Route::put('/admin/cards/{id}/update', [PortfolioController::class, 'update'])->
 
 // S E R V I C E 
 
+//read
+Route::get('/admin/service', [ServiceController::class, 'index'])->name('services.index');
+
 //Create
-Route::get('/admin/number/create', [FactController::class, 'create'])->name('facts.create');
+Route::get('/admin/service/create', [ServiceController::class, 'create'])->name('services.create');
+Route::post('/admin/service/store', [SkillController::class, 'store'])->name('services.store');
 
 //Delete
-Route::delete('/admin/number/{id}/delete', [FactController::class, 'destroy'])->name('facts.destroy');
+Route::delete('/admin/service/{id}/delete', [ServiceController::class, 'destroy'])->name('services.destroy');
 
 //Show
-Route::get('/admin/number/{id}', [FactController::class, 'show'])->name('facts.show');
+Route::get('/admin/service/{id}', [ServiceController::class, 'show'])->name('services.show');
 
 //Edit || Update
-Route::get('/admin/number/{id}/edit', [FactController::class, 'edit'])->name('facts.edit');
-Route::put('/admin/number/{id}/update', [FactController::class, 'update'])->name('facts.update');
+Route::get('/admin/service/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
+Route::put('/admin/service/{id}/update', [ServiceController::class, 'update'])->name('services.update');

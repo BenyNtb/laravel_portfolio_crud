@@ -3,13 +3,14 @@
 @section('content')
     <main id="">
         <section>
+            <a href="{{route('abouts.index')}}">Back to About</a>
             <div class="container">
                 <h1>Edit About</h1>
                 <form method="POST" action={{route('abouts.update', $presentation->id)}}>
                     @csrf
                     @method('PUT')
                 <label for="title">Title</label>
-                <input type="text" name="title">
+                <input type="text" name="title" value="{{$presentation->title}}" id="title">
 
                 <hr>
 
