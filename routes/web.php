@@ -42,7 +42,7 @@ Route::get('admin/presentation', [AboutController::class, 'index'])->name('about
 
 //Create
 Route::get('/admin/presentation/create', [AboutController::class, 'create'])->name('abouts.create');
-Route::post('/admin/presentation/store', [SkillController::class, 'store'])->name('about.store');
+Route::post('/admin/presentation/store', [AboutController::class, 'store'])->name('abouts.store');
 
 //Store
 Route::post('/admin/presentation/store', [AboutController::class, 'store'])->name('abouts.store');
@@ -108,7 +108,7 @@ Route::get('admin/cards', [PortfolioController::class, 'index'])->name('portfoli
 
 //Create
 Route::get('/admin/cards/create', [PortfolioController::class, 'create'])->name('portfolios.create');
-Route::post('/admin/cards/store', [SkillController::class, 'store'])->name('portfolios.store');
+Route::post('/admin/cards/store', [PortfolioController::class, 'store'])->name('portfolios.store');
 
 //Delete
 Route::delete('/admin/cards/{id}/delete', [PortfolioController::class, 'destroy'])->name('portfolios.destroy');
@@ -130,7 +130,7 @@ Route::get('/admin/service', [ServiceController::class, 'index'])->name('service
 
 //Create
 Route::get('/admin/service/create', [ServiceController::class, 'create'])->name('services.create');
-Route::post('/admin/service/store', [SkillController::class, 'store'])->name('services.store');
+Route::post('/admin/service/store', [ServiceController::class, 'store'])->name('services.store');
 
 //Delete
 Route::delete('/admin/service/{id}/delete', [ServiceController::class, 'destroy'])->name('services.destroy');

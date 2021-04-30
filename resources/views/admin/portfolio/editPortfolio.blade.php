@@ -10,17 +10,17 @@
                     @csrf
                     @method('PUT')
                 <label for="title">Title</label>
-                <input type="text" name="title">
+                <input type="text" name="title" id="title" value="{{ $portfolio->title }}">
 
                 <hr>
 
                 <label for="link">Link</label>
-                <input type="text" name="link">
+                <input type="text" name="link" id="link" value="{{ $portfolio->link }}">
 
                 <hr>
 
                 <label for="filter">filter</label>
-                <input type="text" name="filter">
+                <input type="text" name="filter" id="filter" value="{{ $portfolio->filter }}">
 
                 <hr>
 

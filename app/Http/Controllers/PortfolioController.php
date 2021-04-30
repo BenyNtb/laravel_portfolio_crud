@@ -26,12 +26,12 @@ class PortfolioController extends Controller
         $portfolio->link = $request->link;
         $portfolio->filter = $request->filter;
         $portfolio->save();
-        return redirect()->route('portfolios.index');
+        return redirect()->route('portfolios.index')->with('success', 'Your element has added successfully');
     }
 
     public function destroy(Portfolio $id){
         $id->delete();
-        return redirect()->route('portfolio.index');
+        return redirect()->route('portfolio.index')->with('warning', "An element has been deleted");
     }
     public function show(Portfolio $id){
         $portfolio = $id;
@@ -52,6 +52,6 @@ class PortfolioController extends Controller
         $portfolio->link = $request->link;
         $portfolio->filter = $request->filter;
         $portfolio->save();
-        return redirect('/admin/cards' . $portfolio->id);
+        return redirect()->route('portfolios.index')->with('success', 'Your portfolio is up to date');
     }
 }
