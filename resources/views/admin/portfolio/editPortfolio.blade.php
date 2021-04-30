@@ -10,18 +10,25 @@
                     @csrf
                     @method('PUT')
                 <label for="title">Title</label>
-                <input type="text" name="title" id="title" value="{{ $portfolio->title }}">
-
+                <input type="text" name="title" id="title" value="{{ $portfolio->title }}" class="form-control @error('title') is-invalid @enderror">
+                @error('title')
+                <span class="invalid-feedback"><strong>{{$message}}</strong></span>
+                @enderror
                 <hr>
 
                 <label for="link">Link</label>
-                <input type="text" name="link" id="link" value="{{ $portfolio->link }}">
-
+                <input type="text" name="link" id="link" value="{{ $portfolio->link }}" class="form-control @error('link') is-invalid @enderror">
+                @error('link')
+                <span class="invalid-feedback"><strong>{{$message}}</strong></span>
+                @enderror
+                
                 <hr>
 
                 <label for="filter">filter</label>
-                <input type="text" name="filter" id="filter" value="{{ $portfolio->filter }}">
-
+                <input type="text" name="filter" id="filter" value="{{ $portfolio->filter }}" class="form-control @error('filter') is-invalid @enderror">
+                @error('filter')
+                <span class="invalid-feedback"><strong>{{$message}}</strong></span>
+                @enderror
                 <hr>
 
 

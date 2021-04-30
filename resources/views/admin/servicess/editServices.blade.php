@@ -10,17 +10,26 @@
                     @csrf
                     @method('PUT')
                 <label for="title">Title</label>
-                <input type="text" name="title">
+                <input type="text" name="title" id="title" value="{{ $service->title }}" class="form-control @error('title') is-invalid @enderror">
+                @error('title')
+                <span class="invalid-feedback"><strong>{{$message}}</strong></span>
+                @enderror
 
                 <hr>
 
                 <label for="description">Description</label>
-                <input type="text" name="description">
+                <input type="text" name="description" id="description" value="{{ $service->description }}" class="form-control @error('description') is-invalid @enderror">
+                @error('description')
+                <span class="invalid-feedback"><strong>{{$message}}</strong></span>
+                @enderror
 
                 <hr>
 
                 <label for="icon">Icon</label>
-                <input type="text" name="Icon">
+                <input type="text" name="Icon" id="icon" value="{{ $service->icon }}" class="form-control @error('icon') is-invalid @enderror">
+                @error('icon')
+                <span class="invalid-feedback"><strong>{{$message}}</strong></span>
+                @enderror
 
                 <hr>
 

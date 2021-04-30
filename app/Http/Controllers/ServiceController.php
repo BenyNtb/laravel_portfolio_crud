@@ -29,13 +29,13 @@ class ServiceController extends Controller
         $service->icon = $request->icon;
         $service->save();
 
-        return redirect()->route('services.index');
+        return redirect()->route('services.index')->with('success', 'Your element has added successfully');
     }
 
     public function destroy(Service $id)
     {
         $id->delete();
-        return redirect()->back();
+        return redirect()->route('services.index')->with('warning', "An element has been deleted");
     }
     public function show(Service $id)
     {
@@ -59,6 +59,6 @@ class ServiceController extends Controller
         $service->description = $request->description;
         $service->icon = $request->icon;
         $service->save();
-        return redirect('/admin/service/' . $service->id);
+        return redirect()->route('services.index')->with('success', 'Your facts is up to date');
     }
 }
