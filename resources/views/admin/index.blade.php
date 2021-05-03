@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <section>
+    <section class="container">
         <h1>Admin | My Dashboard</h1>
         <a href={{ route('home') }}>Go back to portfolio</a>
         <div>

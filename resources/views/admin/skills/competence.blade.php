@@ -1,5 +1,6 @@
 @extends('layouts.index')
 
+@include('template.backoffice.header')
 @include('layouts.flash')
 @section('content')
     <div class="container">

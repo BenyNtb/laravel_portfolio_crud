@@ -10,16 +10,16 @@
 
         <div class="row">
             <div>
-            @foreach ($errors as $service)
+            @foreach ($service as $services)
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-                <div class="icon"><i class="{{$service->icon}}"></i></div>
-                <h4 class="title"><a href="">{{$service->title}}</a></h4>
-                <p class="description">{{$service->description}}</p>
+                <div class="icon"><i class="{{$services->icon}}"></i></div>
+                <h4 class="title"><a href="">{{$services->title}}</a></h4>
+                <p class="description">{{$services->description}}</p>
             </div>
             @endforeach
             </div>
             <div class="container col-3">
-                {{$service->links('')}}
+                {{$service->links('vendor.pagination.bootstrap-4')}}
             </div>
             {{-- <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
