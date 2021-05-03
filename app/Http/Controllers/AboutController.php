@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
@@ -84,6 +85,13 @@ class AboutController extends Controller
             "email" =>["required"],
             "freelance" =>["required"],
         ]);
+        //INPUT FOR THE IMG
+        if ($request->image !=null){
+            Storage::disk('public')->delete('img/'. $id->image);
+            $request->file('image')->storePublicly('img/', 'public');
+            $presentation->image = $request->file('image')->hashName();
+            $presentation->save();
+        }
         $presentation = $id;
         $presentation->title = $request->title;
         $presentation->description = $request->description;

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AllController;
 use App\Http\Controllers\FactController;
+use App\Http\Controllers\MailboxController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
@@ -141,3 +142,14 @@ Route::get('/admin/service/{id}', [ServiceController::class, 'show'])->name('ser
 //Edit || Update
 Route::get('/admin/service/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
 Route::put('/admin/service/{id}/update', [ServiceController::class, 'update'])->name('services.update');
+
+// M A I L B O X
+
+//read
+Route::get('/admin/mail', [MailboxController::class, 'index'])->name('mailbox.index');
+
+//store
+Route::post('/mailbox', [MailboxController::class, 'store'])->name('mailbox.store');
+
+//destroy
+Route::delete('/mailbox/{id}', [MailboxController::class, 'destroy'])->name('mailbox.destroy');
