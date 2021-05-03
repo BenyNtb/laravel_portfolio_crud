@@ -8,7 +8,7 @@
 
         <nav class="nav-menu">
             <ul>
-                <li class="active"><a href="index.html"><i class="bx bx-lock"></i> <span>Admin</span></a></li>
+                <li class="active"><a href="{{route('admin')}}"><i class="bx bx-lock"></i> <span>Admin</span></a></li>
                 <li><a href="{{route('abouts.index') }}"><i class="bx bx-user"></i> <span>About</span></a></li>
                 <li><a href="{{route('facts.index') }}"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
                 <li><a href="{{route('portfolios.index') }}"><i class="bx bx-book-content"></i> Portfolio</a></li>
