@@ -9,6 +9,7 @@
         </div>
 
         <div class="row">
+            <div>
             @foreach ($errors as $service)
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
                 <div class="icon"><i class="{{$service->icon}}"></i></div>
@@ -16,7 +17,10 @@
                 <p class="description">{{$service->description}}</p>
             </div>
             @endforeach
-            
+            </div>
+            <div class="container col-3">
+                {{$service->links('')}}
+            </div>
             {{-- <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
                 <h4 class="title"><a href="">Dolor Sitema</a></h4>

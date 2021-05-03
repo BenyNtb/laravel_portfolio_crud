@@ -14,7 +14,7 @@
                         {{$portfolio->title}}</p>
                         <br>
                     <p><span>Link:</span> <br>
-                        {{$portfolio->link}}</p>
+                        <img src={{asset('img/portfolio/' . $portfolio->link)}}></p>
                         <br>
                         <p><span>Filter:</span> <br>
                             {{$portfolio->filter}}</p>

@@ -6,7 +6,7 @@
             <a href="{{route('portfolios.index')}}">Back to Portfolio</a>
             <div class="container">
                 <h1>Edit Portfolio</h1>
-                <form method="POST" action={{route('portfolios.update', $portfolio->id)}}>
+                <form method="POST" enctype="multipart/form-data" action={{route('portfolios.update', $portfolio->id)}}>
                     @csrf
                     @method('PUT')
                 <label for="title">Title</label>
@@ -34,7 +34,7 @@
                     <label for="link">Name of the file</label>
                     <input type="file" name="link" id="link" class="form-control-file">
                 </div>
-                <img src="{{asset('img/portfolio/'. $portfolio->nom)}}" alt="image">
+                <img src="{{asset('img/portfolio/'. $portfolio->link)}}" alt="image">
 
                 <button type="submit">Submit</button>
                 </form>

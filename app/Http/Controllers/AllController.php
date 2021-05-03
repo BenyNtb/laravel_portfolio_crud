@@ -16,7 +16,7 @@ class AllController extends Controller
         $numbers = Fact::all();
         $skills = Skill::all();
         $portfolio = Portfolio::all();
-        $service = Service::all();
+        $service = Service::paginate(3)->fragment('services');
         return view('home', compact('presentation', 'numbers', 'skills', 'portfolio', 'service'));
 }
 }

@@ -56,7 +56,7 @@ class PortfolioController extends Controller
         $portfolio->link = $request->link;
         $portfolio->filter = $request->filter;
         // S T O R A G E
-        if($request->link != null){
+        if($request->file('link') != null){
             Storage::disk('public')->delete('img/portfolio/' . $id->link);
             $request->file('link')->storePublicly('img/portfolio/', 'public');
             $portfolio->link = $request->file('link')->hashName();
