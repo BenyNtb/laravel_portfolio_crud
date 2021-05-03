@@ -21,7 +21,20 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            @foreach ($portfolio as $portfolios)
+            <div class="col-lg-4 col-md-6 portfolio-item filter-{{$portfolios->filter}}">
+                <div class="portfolio-wrap">
+                    <img src={{asset('img/portfolio/'. $portfolios->link)}} class="img-fluid" alt="">
+                    <div class="portfolio-links">
+                        <a href={{asset('img/portfolio/'. $portfolios->link)}} data-gall="portfolioGallery" class="venobox"
+                            title="{{$portfolios->title}}"><i class="bx bx-plus"></i></a>
+                        <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            @endforeach
+            {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
                     <img src="{{asset('/img/portfolio/portfolio-1.jpg')}}" class="img-fluid" alt="">
                     <div class="portfolio-links">
@@ -118,7 +131,7 @@
                         <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 

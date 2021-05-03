@@ -10,8 +10,8 @@ class AboutController extends Controller
 {
     public function index()
     {
-        $about = About::all();
-        return view('admin.about.presentation', compact('about'));
+        $presentation = About::all();
+        return view('admin.about.presentation', compact('presentation'));
     }
     public function create()
     {
@@ -86,12 +86,11 @@ class AboutController extends Controller
             "freelance" =>["required"],
         ]);
         //INPUT FOR THE IMG
-        if ($request->image !=null){
-            Storage::disk('public')->delete('img/'. $id->image);
-            $request->file('image')->storePublicly('img/', 'public');
-            $presentation->image = $request->file('image')->hashName();
-            $presentation->save();
-        }
+        // if ($request->image !=null){
+        //     $request->file('image')->storePublicly('img/', 'public');
+        //     $presentation->image = $request->file('image')->hashName();
+        //     $presentation->save();
+        // }
         $presentation = $id;
         $presentation->title = $request->title;
         $presentation->description = $request->description;
@@ -107,6 +106,6 @@ class AboutController extends Controller
         $presentation->email = $request->email;
         $presentation->freelance = $request->freelance;
         $presentation->save();
-        return redirect()->route('abouts.index');
+        return redirect()->route('abouts.index', compact('presentation'));
     }
 }

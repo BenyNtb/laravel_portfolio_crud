@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
 {
@@ -25,6 +26,9 @@ class PortfolioController extends Controller
         $portfolio->title = $request->title;
         $portfolio->link = $request->link;
         $portfolio->filter = $request->filter;
+        // S T O R A G E
+        $request->file('link')->storePublicly('img/portfolio/', 'public');
+        $portfolio->title = $request->title;
         $portfolio->save();
         return redirect()->route('portfolios.index')->with('success', 'Your element has added successfully');
     }
@@ -51,7 +55,13 @@ class PortfolioController extends Controller
         $portfolio->title = $request->title;
         $portfolio->link = $request->link;
         $portfolio->filter = $request->filter;
-        $portfolio->save();
+        // S T O R A G E
+        if($request->link != null){
+            Storage::disk('public')->delete('img/portfolio/' . $id->link);
+            $request->file('link')->storePublicly('img/portfolio/', 'public');
+            $portfolio->link = $request->file('link')->hashName();
+            $portfolio->save();
+        }
         return redirect()->route('portfolios.index')->with('success', 'Your portfolio is up to date');
     }
 }

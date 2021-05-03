@@ -30,8 +30,11 @@
                 <span class="invalid-feedback"><strong>{{$message}}</strong></span>
                 @enderror
                 <hr>
-
-
+                <div class="form-group">
+                    <label for="link">Name of the file</label>
+                    <input type="file" name="link" id="link" class="form-control-file">
+                </div>
+                <img src="{{asset('img/portfolio/'. $portfolio->nom)}}" alt="image">
 
                 <button type="submit">Submit</button>
                 </form>

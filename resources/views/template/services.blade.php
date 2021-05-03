@@ -9,13 +9,15 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-                <div class="icon"><i class="icofont-computer"></i></div>
-                <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                    occaecati cupiditate non provident</p>
+            @foreach ($errors as $service)
+                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                <div class="icon"><i class="{{$service->icon}}"></i></div>
+                <h4 class="title"><a href="">{{$service->title}}</a></h4>
+                <p class="description">{{$service->description}}</p>
             </div>
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+            @endforeach
+            
+            {{-- <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
                 <h4 class="title"><a href="">Dolor Sitema</a></h4>
                 <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -44,7 +46,7 @@
                 <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
                 <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
                     soluta nobis est eligendi</p>
-            </div>
+            </div> --}}
         </div>
 
     </div>

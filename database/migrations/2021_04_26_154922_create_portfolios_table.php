@@ -17,7 +17,7 @@ class CreatePortfoliosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title', 100);
-            $table->string('link', 100);
+            $table->string('link', 1000);
             $table->string('filter', 100);
         });
     }

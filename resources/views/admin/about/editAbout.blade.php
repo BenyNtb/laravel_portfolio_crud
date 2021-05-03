@@ -30,7 +30,11 @@
                 @error('image')
                     <span class="invalid-feedback"><strong>{{$message}}</strong></span>
                 @enderror
-
+                <div class="form-group">
+                    <label for="link">Name of the file</label>
+                    <input type="file" name="link" id="link" class="form-control-file">
+                </div>
+                <img src="{{asset('img/' .$presentation->image)}}" alt="image">
                 <hr>
 
                 <label for="subtitle">Subtitle</label>

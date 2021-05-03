@@ -13,54 +13,54 @@
             <div class="row">
                 <div class="card">
                     <div>
-                        @foreach ($about as $about)
+                        @foreach ($presentation as $abouts)
                         <p><span>Image:</span> <br>
-                            {{ $about->image }}</p>
-                            <img src="{{asset($about->image)}}" alt="image" class="w-30 h-50" >
+                            {{ $abouts->image }}</p>
+                            <img src="{{asset($abouts->image)}}" alt="image" class="w-30 h-50" >
                             
                             <h4 class="font-weight-bold"><br>
-                                {{ $about->subtitle }}</h4>
+                                {{ $abouts->subtitle }}</h4>
 
                             <p><span>Title:</span> <br>
-                                {{ $about->title }}</p>
+                                {{ $abouts->title }}</p>
                         </div>
 
 
                         <p><span>Description:</span> <br>
-                            {{ $about->description }}</p>
+                            {{ $abouts->description }}</p>
 
 
 
                         <p><span>Subparagraph:</span> <br>
-                            {{ $about->subparagraph }}</p>
+                            {{ $abouts->subparagraph }}</p>
 
                         <p><span>Birthday:</span> <br>
-                            {{ $about->birthday }}</p>
+                            {{ $abouts->birthday }}</p>
 
                         <p><span>Website:</span> <br>
-                            {{ $about->website }}</p>
+                            {{ $abouts->website }}</p>
 
                         <p><span>Phone:</span> <br>
-                            {{ $about->phone }}</p>
+                            {{ $abouts->phone }}</p>
 
                         <p><span>City:</span> <br>
-                            {{ $about->city }}</p>
+                            {{ $abouts->city }}</p>
 
                         <p><span>Age:</span> <br>
-                            {{ $about->age }}</p>
+                            {{ $abouts->age }}</p>
 
                         <p><span>Degree:</span> <br>
-                            {{ $about->degree }}</p>
+                            {{ $abouts->degree }}</p>
 
                         <p><span>Email:</span> <br>
-                            {{ $about->email }}</p>
+                            {{ $abouts->email }}</p>
 
                         <p><span>Freelance:</span> <br>
-                            {{ $about->freelance }}</p>
+                            {{ $abouts->freelance }}</p>
 
-                        <a href="{{ route('abouts.show', $about->id) }}" class="btn btn-primary">Details</a>
-                        <a href="{{ route('abouts.edit', $about->id) }}" class="btn">Edit</a>
-                        <form method="POST" action={{ route('abouts.destroy', $about->id) }}>
+                        <a href="{{ route('abouts.show', $abouts->id) }}" class="btn btn-primary">Details</a>
+                        <a href="{{ route('abouts.edit', $abouts->id) }}" class="btn">Edit</a>
+                        <form method="POST" action={{ route('abouts.destroy', $abouts->id) }}>
                             @csrf
                             @method('DELETE')
                             <button type="submit">Delete</button>
